@@ -3,72 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <title>Te Amo ❤️</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 100% MOBILE -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       background: linear-gradient(180deg, #7f1d1d, #dc2626);
       color: #fff;
-      padding: 20px;
     }
 
     .container {
-      max-width: 600px;
-      margin: auto;
+      width: 100%;
+      min-height: 100vh;
+      padding: 24px 18px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
     }
 
     h1 {
-      font-size: 3.5rem;
-      margin-bottom: 10px;
+      font-size: 3.2rem;
+      margin: 10px 0 6px;
       letter-spacing: 2px;
     }
 
     .hint {
-      font-size: 1rem;
+      font-size: 0.95rem;
       opacity: 0.85;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
- <div style="position:relative;width:100%;padding-top:56.25%;border-radius:18px;overflow:hidden;margin-bottom:22px;">
-  <iframe
-    src="src="https://www.youtube.com/embed/jYLw8P_Zm5A?feature=share"
-    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-    allowfullscreen
-    loading="lazy">
-  </iframe>
-</div>
+    /* VIDEO RESPONSIVO */
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+      margin-bottom: 22px;
+    }
 
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
     .mensagem {
-      background: rgba(255,255,255,0.1);
+      width: 100%;
+      background: rgba(255,255,255,0.12);
       padding: 18px;
-      border-radius: 16px;
-      margin-bottom: 25px;
-      text-align: left;
+      border-radius: 18px;
+      margin-bottom: 24px;
       font-size: 1.05rem;
-      line-height: 1.5;
+      line-height: 1.55;
+      text-align: left;
     }
 
     label {
-      display: block;
+      width: 100%;
       text-align: left;
       margin-bottom: 8px;
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 1rem;
     }
 
     textarea {
       width: 100%;
-      min-height: 120px;
-      border-radius: 14px;
+      min-height: 130px;
+      border-radius: 16px;
       border: none;
-      padding: 14px;
+      padding: 14px 16px;
       font-size: 1rem;
-      margin-bottom: 15px;
-      resize: vertical;
+      margin-bottom: 14px;
+      resize: none;
     }
 
     button {
@@ -91,19 +111,21 @@
     <h1>TE AMO</h1>
     <div class="hint">⬇️ expanda o vídeo ⬇️</div>
 
-    <!-- VÍDEO -->
-    <video controls>
-      <source src="video.mp4" type="video/mp4">
-      Seu navegador não suporta vídeo.
-    </video>
+    <!-- VIDEO DO YOUTUBE -->
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/P1Mq4XSFiUg"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
 
     <!-- SUA MENSAGEM -->
     <div class="mensagem">
       <p>
-        <!-- ESCREVA AQUI A SUA MENSAGEM PRA ELA -->
-        Eu não fiz isso esperando uma resposta perfeita,  
-        só fiz porque ainda sinto você aqui dentro.  
-        Assiste com calma… é tudo sincero.
+        Eu fiz isso com calma e com carinho.<br><br>
+        Não é pra te pressionar, nem te confundir.
+        É só pra você sentir o que ainda existe aqui.
       </p>
     </div>
 
