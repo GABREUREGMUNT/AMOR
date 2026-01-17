@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Te Amo ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(180deg, #7f1d1d, #dc2626);
+      color: #fff;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    .hint {
+      font-size: 1rem;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      margin-bottom: 25px;
+    }
+
+    .mensagem {
+      background: rgba(255,255,255,0.1);
+      padding: 18px;
+      border-radius: 16px;
+      margin-bottom: 25px;
+      text-align: left;
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 120px;
+      border-radius: 14px;
+      border: none;
+      padding: 14px;
+      font-size: 1rem;
+      margin-bottom: 15px;
+      resize: vertical;
+    }
+
+    button {
+      width: 100%;
+      padding: 16px;
+      border-radius: 999px;
+      border: none;
+      background: #fecaca;
+      color: #7f1d1d;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <h1>TE AMO</h1>
+    <div class="hint">⬇️ expanda o vídeo ⬇️</div>
+
+    <!-- VÍDEO -->
+    <video controls>
+      <source src="video.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
+
+    <!-- SUA MENSAGEM -->
+    <div class="mensagem">
+      <p>
+        <!-- ESCREVA AQUI A SUA MENSAGEM PRA ELA -->
+        Eu não fiz isso esperando uma resposta perfeita,  
+        só fiz porque ainda sinto você aqui dentro.  
+        Assiste com calma… é tudo sincero.
+      </p>
+    </div>
+
+    <!-- RESPOSTA DELA -->
+    <label for="resposta">Deixe sua resposta ❤️</label>
+    <textarea id="resposta" placeholder="Escreve o que você sentir..."></textarea>
+    <button onclick="enviar()">Enviar</button>
+
+  </div>
+
+  <script>
+    function enviar() {
+      const texto = document.getElementById("resposta").value;
+
+      if (!texto) {
+        alert("Escreve algo antes de enviar ❤️");
+        return;
+      }
+
+      fetch("https://formspree.io/f/SEU_ID_AQUI", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ resposta: texto })
+      });
+
+      alert("Mensagem enviada com carinho ❤️");
+      document.getElementById("resposta").value = "";
+    }
+  </script>
+
+</body>
+</html>
